@@ -34,18 +34,30 @@ import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JSpinnerDateEditor;
 
-
+/**
+ * <b>VueStat est la classe graphique affichant les statistiques globales sur les stages.<b/>
+ *
+ */
 public class VueStat extends JPanel{
 
-	
+	/**
+	 * Constructeur VueStat
+	 * 
+	 * <p>En utilisant ce constructeur on initialise les différentes caractéristiques
+	 * de la vue.</p>
+	 */
 	public VueStat(){
 		setupUI();
 	}
 	
-	
+	/**
+	 * Permet de spécifier les différentes caractéristiques et contenu de la vue.
+	 * 
+	 * @see RequeteSQL
+	 */
 	private void setupUI(){
 		
-		/**Specification des layout et dÃ©finition des composants**/
+		//Specification des layout et dÃ©finition des composants
 		
 		this.setLayout(new BorderLayout());
 
@@ -69,7 +81,7 @@ public class VueStat extends JPanel{
 		moncalendrier.setDateFormatString("dd/MM/yyyy");
 		
 		
-		/**Remplissage des statistiques**/
+		//Remplissage des statistiques
 		ResultSet res;
 		try {
 			res = RequeteSQL.tableStat.executeQuery();
@@ -85,7 +97,7 @@ public class VueStat extends JPanel{
 			e2.printStackTrace();
 		}
 		
-		/**Formatage de l'interface**/
+		//Formatage de l'interface
 		c.insets = new Insets(10, 0, 10, 0);
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 0;

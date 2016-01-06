@@ -5,6 +5,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * <b>RequeteSQL est la classe qui permet de gérer les différentes requêtes SQL 
+ * nécessaires à l'obtention des différentes statistiques.</b>
+ * <p>La classe RequeteSQL est caractérisée par les attributs suivant :
+ * <ul>
+ * <li>Une connexion à la base de données</li>
+ * <li>Une requête (CallableStatement ou PreparedStatement) pour chaque résultat</li>
+ * </ul>
+ * </p>
+ */
 public class RequeteSQL {
 	
 	//Connexion
@@ -29,7 +39,9 @@ public class RequeteSQL {
 	public static PreparedStatement tableStat;
 	public static PreparedStatement EntrepriseContactStage;
 	
-	
+	/**
+	 * Initialise chaque requête SQL..
+	 */
 	//Initialisation
 	public static void initialize(){
 
@@ -41,7 +53,7 @@ public class RequeteSQL {
 		System.out.println("Connexion rÃ©ussie");
 		
 		
-		/**Initialisation de tous les PreparedStatement et CallableStatement**/
+		//Initialisation de tous les PreparedStatement et CallableStatement
 		
 		try {
 			listeVille = myCo.prepareStatement ("SELECT DISTINCT s.ENTREPRISE.ADRESSE.Ville as colonne "

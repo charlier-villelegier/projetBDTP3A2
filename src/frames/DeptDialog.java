@@ -12,8 +12,22 @@ import javax.swing.JPanel;
 
 import outilSQL.RequeteSQL;
 
+/**
+ * <b>DeptDialog est la classe graphique affichant le nombre de stages par département.<b/>
+ *
+ */
 public class DeptDialog extends JDialog{
 	
+	/**
+	 * Constructeur DeptDialog
+	 * 
+	 * <p>En utilisant ce constructeur on récupère récupère les différents départements et 
+	 * le nombre de stages correspondant et on initialise la JDialog.</p>
+	 * 
+	 * @param container
+	 * 			Le panel qui contient le DeptDialog.
+	 * @see RequeteSQL
+	 */
 	public DeptDialog(JPanel container){
 		
 		//Affichage des informations

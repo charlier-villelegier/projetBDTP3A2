@@ -26,16 +26,31 @@ import frames.DeptDialog;
 import frames.VilleDialog;
 import outilSQL.RequeteSQL;
 
+/**
+ * <b>VueGeographique est la classe graphique affichant les différentes statistiques sur les stages 
+ * en fonction de la localisation du stage.<b/>
+ *
+ */
 public class VueGeographique extends JPanel{
-
+	
+	/**
+	 * Constructeur VueGeographique
+	 * 
+	 * <p>En utilisant ce constructeur on initialise les différentes caractéristiques
+	 * de la vue.</p>
+	 */
 	public VueGeographique(){
 		setupUI();
 	}
 	
-	
+	/**
+	 * Permet de spécifier les différentes caractéristiques et contenu de la vue.
+	 * 
+	 * @see RequeteSQL
+	 */
 	private void setupUI(){
 		
-		/**Specification des layout et dÃ©finition des composants hauts**/
+		//Specification des layout et dÃ©finition des composants hauts.
 		
 		this.setLayout(new BorderLayout());
 		
@@ -67,7 +82,7 @@ public class VueGeographique extends JPanel{
 		
 		this.add(panelTop, BorderLayout.NORTH);
 		
-		/**Specification des layout et dÃ©finition des composants centraux**/
+		//Specification des layout et dÃ©finition des composants centraux.
 		
 		JPanel topCenter = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
@@ -148,7 +163,7 @@ public class VueGeographique extends JPanel{
 				try {
 					if(listeVilleDept.getSelectedItem() != null){
 						if(villeOrDept.getSelectedItem().toString().equals("ville")){
-							/**Nombre de stage total**/
+							//Nombre de stage total
 							RequeteSQL.nbStageVilleTotal.setString(2, listeVilleDept.getSelectedItem().toString());
 							RequeteSQL.nbStageVilleTotal.setFloat(3, (int) yearSpinner.getValue());
 							RequeteSQL.nbStageVilleTotal.registerOutParameter(1, java.sql.Types.FLOAT);
@@ -157,7 +172,7 @@ public class VueGeographique extends JPanel{
 							RequeteSQL.nbStageVilleTotal.execute();
 							nbStagesTotal.setText(String.valueOf(RequeteSQL.nbStageVilleTotal.getInt(1)) + " stage(s) au total");
 							
-							/**Nombre de stage moyen**/
+							//Nombre de stage moyen
 							RequeteSQL.nbStageVilleMoyen.setString(2, listeVilleDept.getSelectedItem().toString());
 							RequeteSQL.nbStageVilleMoyen.setFloat(3, (int) yearSpinner.getValue());
 							RequeteSQL.nbStageVilleMoyen.registerOutParameter(1, java.sql.Types.FLOAT);
@@ -168,7 +183,7 @@ public class VueGeographique extends JPanel{
 						}
 						else if(villeOrDept.getSelectedItem().toString().equals("dÃ©partement")){
 							
-							/**Nombre de stage total**/
+							//Nombre de stage total
 							RequeteSQL.nbStageDepartementTotal.setInt(2, Integer.parseInt(listeVilleDept.getSelectedItem().toString()));
 							RequeteSQL.nbStageDepartementTotal.setFloat(3, (int) yearSpinner.getValue());
 							RequeteSQL.nbStageDepartementTotal.registerOutParameter(1, java.sql.Types.FLOAT);
@@ -177,7 +192,7 @@ public class VueGeographique extends JPanel{
 							RequeteSQL.nbStageDepartementTotal.execute();
 							nbStagesTotal.setText(String.valueOf(RequeteSQL.nbStageDepartementTotal.getInt(1)) + " stage(s) au total");
 							
-							/**Nombre de stage moyen**/
+							//Nombre de stage moyen
 							RequeteSQL.nbStageDepartementMoyen.setString(2, listeVilleDept.getSelectedItem().toString());
 							RequeteSQL.nbStageDepartementMoyen.setFloat(3, (int) yearSpinner.getValue());
 							RequeteSQL.nbStageDepartementMoyen.registerOutParameter(1, java.sql.Types.FLOAT);
@@ -214,7 +229,7 @@ public class VueGeographique extends JPanel{
 	        	try {
 	        		if(listeVilleDept.getSelectedItem() != null){
 						if(villeOrDept.getSelectedItem().toString().equals("ville")){
-							/**Nombre de stage total**/
+							//Nombre de stage total
 							RequeteSQL.nbStageVilleTotal.setString(2, listeVilleDept.getSelectedItem().toString());
 							RequeteSQL.nbStageVilleTotal.setFloat(3, (int) yearSpinner.getValue());
 							RequeteSQL.nbStageVilleTotal.registerOutParameter(1, java.sql.Types.FLOAT);
@@ -223,7 +238,7 @@ public class VueGeographique extends JPanel{
 							RequeteSQL.nbStageVilleTotal.execute();
 							nbStagesTotal.setText(String.valueOf(RequeteSQL.nbStageVilleTotal.getInt(1)) + " stage(s) au total");
 							
-							/**Nombre de stage moyen**/
+							//Nombre de stage moyen
 							RequeteSQL.nbStageVilleMoyen.setString(2, listeVilleDept.getSelectedItem().toString());
 							RequeteSQL.nbStageVilleMoyen.setFloat(3, (int) yearSpinner.getValue());
 							RequeteSQL.nbStageVilleMoyen.registerOutParameter(1, java.sql.Types.FLOAT);
@@ -234,7 +249,7 @@ public class VueGeographique extends JPanel{
 						}
 						else if(villeOrDept.getSelectedItem().toString().equals("dÃ©partement")){
 							
-							/**Nombre de stage total**/
+							//Nombre de stage total
 							RequeteSQL.nbStageDepartementTotal.setInt(2, Integer.parseInt(listeVilleDept.getSelectedItem().toString()));
 							RequeteSQL.nbStageDepartementTotal.setFloat(3, (int) yearSpinner.getValue());
 							RequeteSQL.nbStageDepartementTotal.registerOutParameter(1, java.sql.Types.FLOAT);
@@ -243,7 +258,7 @@ public class VueGeographique extends JPanel{
 							RequeteSQL.nbStageDepartementTotal.execute();
 							nbStagesTotal.setText(String.valueOf(RequeteSQL.nbStageDepartementTotal.getInt(1)) + " stage(s) au total");
 							
-							/**Nombre de stage moyen**/
+							//Nombre de stage moyen
 							RequeteSQL.nbStageDepartementMoyen.setString(2, listeVilleDept.getSelectedItem().toString());
 							RequeteSQL.nbStageDepartementMoyen.setFloat(3, (int) yearSpinner.getValue());
 							RequeteSQL.nbStageDepartementMoyen.registerOutParameter(1, java.sql.Types.FLOAT);

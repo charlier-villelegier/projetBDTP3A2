@@ -20,15 +20,31 @@ import javax.swing.event.ChangeListener;
 
 import outilSQL.RequeteSQL;
 
+/**
+ * <b>VueAnnee est la classe graphique affichant les différentes statistiques sur les stages 
+ * en fonction des années.<b/>
+ *
+ */
 public class VueAnnee extends JPanel{
 	
+	/**
+	 * Constructeur VueAnnee
+	 * 
+	 * <p>En utilisant ce constructeur on initialise les différentes caractéristiques
+	 * de la vue.</p>
+	 */
 	public VueAnnee(){
 		setupUI();
 	}
 	
+	/**
+	 * Permet de spécifier les différentes caractéristiques et contenu de la vue.
+	 * 
+	 * @see RequeteSQL
+	 */
 	private void setupUI(){
 		
-		/**Specification des layout et dÃ©finition des composants**/
+		//Specification des layout et dÃ©finition des composants.
 		
 		this.setLayout(new BorderLayout());
 
@@ -65,7 +81,7 @@ public class VueAnnee extends JPanel{
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				try {
-					/**Nombre total de stage**/
+					//Nombre total de stage
 					RequeteSQL.nbStageTotalEntrepriseAnnee.setFloat(3, (int) yearSpinner.getValue());
 					RequeteSQL.nbStageTotalEntrepriseAnnee.setString(2, nameEntreprise.getSelectedItem().toString());
 					RequeteSQL.nbStageTotalEntrepriseAnnee.registerOutParameter(1, java.sql.Types.INTEGER);
@@ -74,7 +90,7 @@ public class VueAnnee extends JPanel{
 					RequeteSQL.nbStageTotalEntrepriseAnnee.execute();
 					nbStagesTotal.setText(String.valueOf(RequeteSQL.nbStageTotalEntrepriseAnnee.getInt(1)) + " stage(s) au total");
 					
-					/**Nombre moyen de stage**/
+					//Nombre moyen de stage
 					RequeteSQL.nbStageMoyenEntrepriseAnnee.setFloat(3, (int) yearSpinner.getValue());
 					RequeteSQL.nbStageMoyenEntrepriseAnnee.setString(2, nameEntreprise.getSelectedItem().toString());
 					RequeteSQL.nbStageMoyenEntrepriseAnnee.registerOutParameter(1, java.sql.Types.INTEGER);
@@ -107,7 +123,7 @@ public class VueAnnee extends JPanel{
 	        @Override
 	        public void stateChanged(ChangeEvent e) {
 	        	try {
-	        		/**Nombre total de stage**/
+	        		//Nombre total de stage
 					RequeteSQL.nbStageTotalEntrepriseAnnee.setFloat(3, (int) yearSpinner.getValue());
 					RequeteSQL.nbStageTotalEntrepriseAnnee.setString(2, nameEntreprise.getSelectedItem().toString());
 					RequeteSQL.nbStageTotalEntrepriseAnnee.registerOutParameter(1, java.sql.Types.FLOAT);
@@ -116,7 +132,7 @@ public class VueAnnee extends JPanel{
 					RequeteSQL.nbStageTotalEntrepriseAnnee.execute();
 					nbStagesTotal.setText(String.valueOf(RequeteSQL.nbStageTotalEntrepriseAnnee.getInt(1)) + " stage(s) au total");
 					
-					/**Nombre moyen de stage**/
+					//Nombre moyen de stage
 					RequeteSQL.nbStageMoyenEntrepriseAnnee.setFloat(3, (int) yearSpinner.getValue());
 					RequeteSQL.nbStageMoyenEntrepriseAnnee.setString(2, nameEntreprise.getSelectedItem().toString());
 					RequeteSQL.nbStageMoyenEntrepriseAnnee.registerOutParameter(1, java.sql.Types.FLOAT);
