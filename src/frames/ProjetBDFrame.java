@@ -12,7 +12,7 @@ public class ProjetBDFrame extends JFrame{
 	public ProjetBDFrame(String title){
 		super(title);
 		this.setupUI();
-		this.pack();
+		this.setSize(950,400);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setVisible(true);
 	}

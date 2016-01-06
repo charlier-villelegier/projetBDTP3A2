@@ -2,6 +2,8 @@ package outilSQL;
 import java.sql.*;
 import java.util.Scanner;
 
+
+/**Classe fournie dans les TP pour se connecter**/
 public class OutilsJDBC {
 	public static Connection openConnection (String url) {
 		Connection co=null;
