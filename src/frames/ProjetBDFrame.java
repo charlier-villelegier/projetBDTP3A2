@@ -8,7 +8,7 @@ import vues.VueGeographique;
 import vues.VueStat;
 
 /**
- * <b>ProjetBDFrame est la classe graphique représentant la fenêtre principal de l'application.<b/>
+ * <b>ProjetBDFrame est la classe graphique reprï¿½sentant la fenï¿½tre principal de l'application.<b/>
  *
  */
 public class ProjetBDFrame extends JFrame{
@@ -16,22 +16,22 @@ public class ProjetBDFrame extends JFrame{
 	/**
 	 * Constructeur ProjetBDFrame
 	 * 
-	 * <p>En utilisant ce constructeur on initialise les différentes caractéristiques
-	 * de la fenêtre.</p>
+	 * <p>En utilisant ce constructeur on initialise les diffï¿½rentes caractï¿½ristiques
+	 * de la fenï¿½tre.</p>
 	 * 
 	 * @param title
-	 * 			Le titre de la fenêtre.
+	 * 			Le titre de la fenï¿½tre.
 	 */
 	public ProjetBDFrame(String title){
 		super(title);
 		this.setupUI();
 		this.setSize(950,400);
-		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
 	
 	/**
-	 * Permet de créer les différents onglets de l'application.
+	 * Permet de crï¿½er les diffï¿½rents onglets de l'application.
 	 */
 	private void setupUI(){
 		JTabbedPane tabbedPane = new JTabbedPane();
